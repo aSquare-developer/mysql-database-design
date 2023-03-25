@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->unsignedBigInteger("tag_id");
             $table->timestamps();
 
+            $table->unique(["post_id", "tag_id"]);
+
             $table
                 ->foreign("post_id")
                 ->references("id")
